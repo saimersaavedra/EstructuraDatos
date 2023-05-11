@@ -5,12 +5,6 @@ public class Node<E> {
     private Node arbDer;
     private E dato;
 
-    public Node(Node arbIzq, Node arbDer, E dato) {
-        this.arbIzq = arbIzq;
-        this.arbDer = arbDer;
-        this.dato = dato;
-    }
-
     public Node(E dato) {
         this.dato = dato;
     }
@@ -62,9 +56,9 @@ public class Node<E> {
         this.dato = dato;
     }
     
-    void insertar(E elemento)
+    void insertar(Integer elemento)
     {
-        if(elemento < dato)
+        if(elemento < (Integer)dato)
         {
             if(arbIzq == null)
             {
@@ -72,8 +66,19 @@ public class Node<E> {
             }
             else 
             {
-                insertar(elemento);
+                arbIzq.insertar(elemento);
             }
+        } 
+        else
+        {
+                if(arbDer == null)
+                {
+                    arbDer = new Node(elemento);
+                }
+                else
+                {
+                   arbDer.insertar(elemento);
+                }
         }
     }
     
