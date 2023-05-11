@@ -5,6 +5,21 @@ public class Node<E> {
     private Node arbDer;
     private E dato;
 
+    public Node(Node arbIzq, Node arbDer, E dato) {
+        this.arbIzq = arbIzq;
+        this.arbDer = arbDer;
+        this.dato = dato;
+    }
+
+    public Node(E dato) {
+        this.dato = dato;
+    }
+
+        public Node() {
+    }
+
+    
+    
     /**
      * @return the arbIzq
      */
@@ -47,6 +62,20 @@ public class Node<E> {
         this.dato = dato;
     }
     
+    void insertar(E elemento)
+    {
+        if(elemento < dato)
+        {
+            if(arbIzq == null)
+            {
+                arbIzq = new Node(elemento);
+            }
+            else 
+            {
+                insertar(elemento);
+            }
+        }
+    }
     
     
 }
