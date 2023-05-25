@@ -22,6 +22,7 @@ public class test {
         System.out.println("Hojas: "+uno.contarHojas(uno.getRaiz()));
         System.out.println("Tamaño: "+uno.tamaño(uno.getRaiz()));
         uno.eliminarNodoRec(uno.getRaiz(), 5);
+        uno.eliminarNodoRec(uno.getRaiz(), 10);
         uno.inOrden(uno.getRaiz());
     }
 }
