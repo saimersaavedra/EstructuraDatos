@@ -1,18 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package SegundoParcial;
 
-import Colas.Cola;
-import Colas.Node;
-import Pilas.Node;
-import Pilas.Pila;
+import Cola.Cola;
+import Cola.Nodo;
+import Pila.Node;
+import Pila.Pila;
 
-/**
- *
- * @author DANIELA
- */
 public class Ejercicio<A> {
     
     public Pila sacarFondo(Pila p){

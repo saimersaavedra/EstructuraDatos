@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Colas;
+package Cola;
 
-/**
- *
- * @author DANIELA
- */
-public class Node <A> {
-    private A dato;
-    private Node siguiente;
+public class Nodo<A> {
+     private A dato;
+     private Nodo siguiente;
 
-    public Node(A dato, Node siguiente) {
+    public Nodo(A dato,Nodo siguiente) {
         this.dato = dato;
         this.siguiente = siguiente;
     }
@@ -35,16 +26,14 @@ public class Node <A> {
     /**
      * @return the siguiente
      */
-    public Node getSiguiente() {
+    public Nodo getSiguiente() {
         return siguiente;
     }
 
     /**
      * @param siguiente the siguiente to set
      */
-    public void setSiguiente(Node siguiente) {
+    public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
-    
-    
 }
