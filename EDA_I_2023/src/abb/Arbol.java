@@ -72,4 +72,35 @@ public class Arbol<E> {
          if(nodo != null) return 1+tamaño(nodo.getArbIzq())+tamaño(nodo.getArbDer());
          else return 0;
      }
+     
+   Node eliminarNodoRec(Node<Integer> raiz, int valor) {
+        if (raiz == null)
+            return raiz;
+
+        if (valor < raiz.getDato())
+            raiz.setArbIzq(eliminarNodoRec(raiz.getArbIzq(), valor));
+        else if (valor > raiz.getDato())
+            raiz.setArbDer(eliminarNodoRec(raiz.getArbDer(), valor));
+        else {
+            if (raiz.getArbIzq() == null)
+                return raiz.getArbDer();
+            else if (raiz.getArbDer() == null)
+                return raiz.getArbIzq();
+
+            raiz.setDato(encontrarMinimo(raiz.getArbDer()));
+            raiz.setArbDer(eliminarNodoRec(raiz.getArbDer(), raiz.getDato()));
+        }
+
+        return raiz;
+    }
+    
+    int encontrarMinimo(Node<Integer> raiz) {
+        int minimo = raiz.getDato();
+        while (raiz.getArbIzq() != null) {
+            minimo = (int) raiz.getArbIzq().getDato();
+            raiz = raiz.getArbIzq();
+        }
+        return minimo;
+    }
+
 }

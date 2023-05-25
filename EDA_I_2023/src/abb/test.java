@@ -21,5 +21,7 @@ public class test {
         uno.preOrden(uno.getRaiz());
         System.out.println("Hojas: "+uno.contarHojas(uno.getRaiz()));
         System.out.println("Tamaño: "+uno.tamaño(uno.getRaiz()));
+        uno.eliminarNodoRec(uno.getRaiz(), 5);
+        uno.inOrden(uno.getRaiz());
     }
 }
