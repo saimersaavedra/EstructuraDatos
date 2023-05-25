@@ -44,7 +44,7 @@ public class Arbol<E> {
             System.out.println("dato:" + raiz.getDato());
         }
     }
-     public void preOrden(Node raiz)
+    public void preOrden(Node raiz)
     {
         if(raiz == null)
         {
@@ -57,4 +57,19 @@ public class Arbol<E> {
             postOrden(raiz.getArbDer());
         }
     }
+    public int contarHojas(Node<E> nodo)
+     {
+         if(nodo != null)
+         {
+             if(nodo.getArbIzq() == null && nodo.getArbDer() == null) return 1;
+         } else return 0;
+         int cantidadNodoIzd = contarHojas(nodo.getArbIzq());
+         int cantidadNodoDer = contarHojas(nodo.getArbDer());
+         return cantidadNodoIzd + cantidadNodoDer;
+     }
+     public int tamaño(Node<E> nodo)
+     {
+         if(nodo != null) return 1+tamaño(nodo.getArbIzq())+tamaño(nodo.getArbDer());
+         else return 0;
+     }
 }
