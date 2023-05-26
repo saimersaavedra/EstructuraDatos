@@ -8,5 +8,7 @@ public class Test {
         p.apilar("pez");
         p.apilar("raton");
         System.out.println("Dato de la pila "+ p.desapilar());
+        p.imprimir();
+        
     }
 }
