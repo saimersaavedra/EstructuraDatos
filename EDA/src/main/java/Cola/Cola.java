@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Cola;
 
-/**
- *
- * @author MajoLvR
- */
 public class Cola<A> {
     Nodo <A>inicio;
+    int tamaño;
     Nodo <A>fin;
 
     public Nodo getInicio() {
@@ -19,6 +12,10 @@ public class Cola<A> {
     public void setInicio(Nodo inicio) {
         this.inicio = inicio;
     }
+
+    public int getTamaño() {
+        return tamaño;
+    }
     
     public void encolar(A dato){
         Nodo nuevo = new Nodo(dato, null);
@@ -27,9 +24,11 @@ public class Cola<A> {
             fin=nuevo;
         }
         else{
+            
             fin.setSiguiente(nuevo);
             fin=nuevo;
         }
+        tamaño++;
     }
     
     public A desencolar(){
@@ -40,9 +39,11 @@ public class Cola<A> {
         else{
            A dato =inicio.getDato();
            inicio=inicio.getSiguiente();
+           tamaño--;
            return dato;
-           
+            
         }
+        
        
     }
     public boolean vacia(){
@@ -56,4 +57,5 @@ public class Cola<A> {
             aux = aux.getSiguiente();
         }
     }
+   
 }
